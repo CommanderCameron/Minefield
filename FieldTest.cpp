@@ -18,7 +18,12 @@ class FieldTest : public ::testing::Test
 TEST(FieldTest, placeMineInBounds)
 {
 	Field minefield;
-	
-	minefield.placeMine(4,5);
-	ASSERT_EQ( MINE_HIDDEN, minefield.get(4,5) );
+	for(int i=0; i<10; i++)
+	{
+		for(int j=0; j<10; j++)
+		{
+		minefield.placeMine(i,j);
+		ASSERT_EQ( MINE_HIDDEN, minefield.get(i,j) );
+		}
+	}
 }
